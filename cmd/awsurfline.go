@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/daehyeok/awsurfline/surfline"
+	"github.com/daehyeok/awsurfline/pkg/surfline"
 	"github.com/deanishe/awgo"
 )
 
@@ -31,6 +31,7 @@ func run() {
 		wf.NewItem(it.Title).
 			Subtitle(it.SubTitle).
 			Arg(it.Url).
+			Quicklook(it.Url).
 			UID(it.Url).
 			Valid(true)
 	}
