@@ -1,5 +1,7 @@
 module github.com/daehyeok/awsurfline
 
+go 1.15
+
 require (
 	github.com/DHowett/go-plist v0.0.0-20180609054337-500bd5b9081b
 	github.com/PuerkitoBio/goquery v1.4.1

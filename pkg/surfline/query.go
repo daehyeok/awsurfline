@@ -9,11 +9,11 @@ import (
 
 func requestQuery(keyword string) (*queryResp, error) {
 
-	baseUrl := "https://services.surfline.com/search/site"
+	baseURL := "https://services.surfline.com/search/site"
 
-	req, err := http.NewRequest("GET", baseUrl, nil)
+	req, err := http.NewRequest("GET", baseURL, nil)
 	if err != nil {
-		logrus.Errorf("Can't create HTTP Request to %s Error", baseUrl)
+		logrus.Errorf("Can't create HTTP Request to %s Error", baseURL)
 		return nil, err
 	}
 
@@ -31,12 +31,12 @@ func requestQuery(keyword string) (*queryResp, error) {
 	defer res.Body.Close()
 
 	//parse response JSON data
-	respJson := new(queryResp)
-	if err := json.NewDecoder(res.Body).Decode(respJson); err != nil {
+	respJSON := new(queryResp)
+	if err := json.NewDecoder(res.Body).Decode(respJSON); err != nil {
 		logrus.Error("Faile to decode query response")
 		return nil, err
 	}
-	return respJson, nil
+	return respJSON, nil
 }
 
 type Item struct {
